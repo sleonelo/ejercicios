@@ -9,8 +9,122 @@ servidor. Aquí el cliente debe llamar una función del servidor que devuelva el
 resultado de la operación obtenida. Dicho resultado debe mostrarlo en el cliente
 en un objeto (label, textarea, etc, etc) – Realizarlo según la teoría de
 procedimientos remotos. -->
-
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio nro 5</title>
+    <!-- Agregamos la hoja de estilos de Bootstrap en línea -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <!-- Agregamos una hoja de estilos personalizada -->
+    <style>
+      /* Estilos para el encabezado */
+      body {
+        background-color: lightgrey;
+      }
+      .header {
+        background-color: #343a40;
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
+      /* Estilos para el título */
+      h1 {
+        margin: 0;
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Agregamos un encabezado con un título -->
+    <div class="header">
+      <h1>Ejercicio nro 5</h1>
+    </div>
+
+    <div class="container mt-3">
+      <form action="" method="post">
+        <div class="form-group">
+          <label for="valor1">Ingrese un número</label>
+          <input type="number" name="valor1" id="valor1" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="valor2">Ingrese otro número</label>
+          <input type="number" name="valor2" id="valor2" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="operaciones">Seleccione una operación</label>
+          <select name="operaciones" id="operaciones" class="form-control">
+            <option value="suma">Suma</option>
+            <option value="resta">Resta</option>
+            <option value="multiplicacion">Multiplicación</option>
+            <option value="division">División</option>
+          </select>
+        </div>
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="captura($('#valor1').val(), $('#valor2').val(), $('#operaciones').val());return false;"
+        >
+          Calcular
+        </button>
+      </form>
+
+      <div class="mt-3">
+        <h4>Resultado:</h4>
+        <span id="resultado">0</span>
+      </div>
+    </div>
+
+    <!-- Agregamos los scripts de Popper.js y Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Agregamos el script de jQuery -->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.7.0.js"
+    ></script>
+
+    <!-- Agregamos nuestro script personalizado -->
+    <script>
+      function captura(valor1, valor2, valor3) {
+        let parametros = {
+          valorCaja1: valor1,
+          valorCaja2: valor2,
+          valorCaja3: valor3,
+        };
+        $.ajax({
+          data: parametros,
+          url: "back.php",
+          type: "post",
+          beforeSend: function () {
+            $("#resultado").html("Procesando, espere por favor...");
+          },
+          success: function (response) {
+            $("#resultado").html(response            );
+          },
+        });
+      }
+    </script>
+  </body>
+</html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -72,4 +186,4 @@ procedimientos remotos. -->
       });
     }
   </script>
-</html>
+</html> -->

@@ -36,14 +36,8 @@ function promedio() {
 
   if (datos) {
     let parametros = {
-      RS_MetodoAEjecutar: "funcion_servidor",
-      RS_parametros: [
-        datos.nombre,
-        datos.apellido,
-        datos.dni,
-        datos.materia,
-        datos.valores,
-      ],
+      RS_MetodoAEjecutar: "funcion_promedio",
+      RS_parametros: [datos.nombre, datos.apellido, datos.dni, datos.materia, datos.valores,],
     };
   // let nombre = document.getElementById("nombre").value;
   // let apellido = document.getElementById("apellido").value;
@@ -81,14 +75,8 @@ function mayor() {
 
   if (datos) {
     let parametros = {
-      RS_MetodoAEjecutar: "funcion_servidor1",
-      RS_parametros: [
-        datos.nombre,
-        datos.apellido,
-        datos.dni,
-        datos.materia,
-        datos.valores,
-      ],
+      RS_MetodoAEjecutar: "funcion_mayor",
+      RS_parametros: [datos.nombre, datos.apellido, datos.dni, datos.materia, datos.valores,],
     };
   // let nombre = document.getElementById("nombre").value;
   // let apellido = document.getElementById("apellido").value;

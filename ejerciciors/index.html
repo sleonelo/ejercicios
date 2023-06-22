@@ -21,11 +21,11 @@ mensaje retornado en el cliente. Note que en el servidor deben existir 2 funcion
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <title>Ejercicio RSServer</title>
+    <title>Ejercicio para la EGI</title>
   </head>
   <body>
     <header class="bg-success text-black-50 p-3">
-      <h1 class="text-center">Ejercicio RSServer</h1>
+      <h1 class="text-center">Ejercicio para la EGI</h1>
     </header>
     <div class="container my-3">
       <div class="row justify-content-center">
@@ -79,52 +79,57 @@ mensaje retornado en el cliente. Note que en el servidor deben existir 2 funcion
                 autofocus
               />
             </div>
-            <fieldset name="notas" class="scheduler-border p-3">
-              <legend>Ingrese las notas de la materia seleccionada</legend>
+            <fieldset name="notas" class="scheduler-border p-5">
+              <legend class="text-black-50 p-3">Ingrese las notas de la materia seleccionada</legend>
               <div class="form-group col">
-                <input
-                  type="number"
-                  name="notas"
-                  class="notas form-control"
-                  placeholder="Ingrese nota aquí..."
-                />
                 Nota 1
-              </div>
-              <div class="form-group col">
                 <input
                   type="number"
                   name="notas"
                   class="notas form-control"
                   placeholder="Ingrese nota aquí..."
                 />
-                Nota 2
+                
               </div>
               <div class="form-group col">
+                Nota 2
+                <input
+                  type="number"
+                  name="notas"
+                  class="notas form-control"
+                  placeholder="Ingrese nota aquí..."
+                />
+                
+              </div>
+              <div class="form-group col">
+                Nota 3
                 <input
                   type="number"
                   name="nota"
                   class="notas form-control"
                   placeholder="Ingrese nota aquí..."
                 />
-                Nota 3
+                
               </div>
               <div class="form-group col">
-                <input
-                  type="number"
-                  name="notas"
-                  class="notas form-control"
-                  placeholder="Ingrese nota aquí..."
-                />
                 Nota 4
-              </div>
-              <div class="form-group col">
                 <input
                   type="number"
                   name="notas"
                   class="notas form-control"
                   placeholder="Ingrese nota aquí..."
                 />
+                
+              </div>
+              <div class="form-group col">
                 Nota 5
+                <input
+                  type="number"
+                  name="notas"
+                  class="notas form-control"
+                  placeholder="Ingrese nota aquí..."
+                />
+                
               </div>
             </fieldset>
             <div class="btn-group d-flex justify-content-center my-3" role="group" aria-label="Basic example">
@@ -137,8 +142,10 @@ mensaje retornado en el cliente. Note que en el servidor deben existir 2 funcion
             </div>
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb bg-light p-3 rounded-0">
-                <li class="breadcrumb-item active border-25" aria-current="page" id="resultado1">Promedio: <span id="promedio"></span></li>
-                <li class="breadcrumb-item active border-25" aria-current="page" id="resultado">Nota más alta: <span id="nota-mas-alta"></span></li>
+                <li class="breadcrumb-item active border-25" aria-current="page" id="resultado1"><span id="promedio"></span></li>
+              </ol>
+              <ol class="breadcrumb bg-light p-3 rounded-0">
+              <li class="breadcrumb-item active border-25" aria-current="page" id="resultado"> <span id="nota-mas-alta"></span></li>
               </ol>
             </nav>
             
@@ -149,7 +156,7 @@ mensaje retornado en el cliente. Note que en el servidor deben existir 2 funcion
     </div>
 
     <footer class="bg-light p-3 text-center">
-      <p>&copy; 2023 Ejercicio RSServer</p>
+      <p>&copy; 2023 Ejercicio PHP Silvio Olmos</p>
     </footer>
 
     <!-- Bootstrap JavaScript Libraries -->
