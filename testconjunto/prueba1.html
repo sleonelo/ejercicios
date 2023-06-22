@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulario</title>
+	<script src="script.js"></script>
+</head>
+<body>
+	<form onsubmit="return validarDatos();" method="post" action="procesar.php">
+		<label for="nombre">Nombre: </label>
+		<input type="text" id="nombre" name="nombre"><br><br>
+		<label for="direccion">Dirección: </label>
+		<input type="text" id="direccion" name="direccion"><br><br>
+		<label for="email">Correo electrónico: </label>
+		<input type="text" id="email" name="email"><br><br>
+		<button type="submit">Enviar</button>
+	</form>
+</body>
+</html>

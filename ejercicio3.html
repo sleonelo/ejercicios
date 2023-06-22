@@ -1,0 +1,40 @@
+<!-- Usando formularios, cree una página html que contenga 2 cajas de texto, un
+combo el cual contendrá las operaciones matemáticas básicas y un botón. La
+idea es que el usuario cargue números, seleccione una operación y luego de
+ejecutar el botón esa info debería ser trasladada al servidor para que realice la
+operación entre los 2 números. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio nro 3</title>
+</head>
+<body>
+    <form action="" method="post">
+        <label for="input1">ingrese un numero</label>
+        <input type="text" name="input1">
+        <br>
+        <label for="input2">ingrese otro numero</label>
+        <input type="text" name="input2">   
+        <br>
+        <select name="operaciones" id="operaciones">
+            <option value="suma">suma</option>
+            <option value="resta">resta</option>
+            <option value="multiplicacion">multiplicacion</option>
+            <option value="division">division</option>
+        </select>
+        <input type="submit" name="submit" value="CALCULAR">
+    </form>
+    <!-- <script type="text/javascript" languaje="javascript">
+        function controlador(){
+            let let_oper=document.getElementById("operaciones");
+            if (let_oper) {
+                
+            }
+        }
+    </script> -->
+    
+</body> 
+</html>

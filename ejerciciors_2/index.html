@@ -1,0 +1,170 @@
+<!-- Utilizando la teoría de llamada a procedimientos remotos, realice una página HTML en la que el usuario carga un
+dni, nombre y apellido de un alumno, y las notas (5) para una materia en particular. En dicha página, deben existir
+2 botones, uno “Promedio” y el otro “Nota Mayor”, la funcionalidad de ambos botones es controlar que la
+información se haya cargado correctamente (funciones javascript en archivos externos) y luego de ello deben
+llamar a la función correspondiente del lado del servidor para que realice la tarea correspondiente. Mostrar el
+mensaje retornado en el cliente. Note que en el servidor deben existir 2 funciones -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.7.0.js"
+    ></script>
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <title>Ejercicio RSServer</title>
+  </head>
+  <body>
+    <header class="bg-primary text-white p-3">
+      <h1 class="text-center">Ejercicio RSServer</h1>
+    </header>
+    <div class="container my-3">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <form action="" method="post">
+            <div class="form-group col">
+              <label for="nombre">Nombre:</label>
+              <input
+                type="text"
+                name="nombre"
+                placeholder="Nombre..."
+                maxlength="35"
+                id="nombre"
+                class="form-control"
+                autofocus
+              />
+            </div>
+            <div class="form-group col">
+              <label for="apellido">Apellido:</label>
+              <input
+                type="text"
+                name="apellido"
+                placeholder="Apellido..."
+                maxlength="35"
+                id="apellido"
+                class="form-control"
+                autofocus
+              />
+            </div>
+            <div class="form-group col">
+              <label for="dni">DNI:</label>
+              <input
+                type="number"
+                name="dni"
+                placeholder="DNI..."
+                id="dni"
+                min="10000000"
+                max="45000000"
+                class="form-control"
+                autofocus
+              />
+            </div>
+            <div class="form-group col">
+              <label for="materia">Materia:</label>
+              <input
+                type="text"
+                name="materia"
+                placeholder="Ingrese materia..."
+                id="materia"
+                class="form-control"
+                autofocus
+              />
+            </div>
+            <fieldset name="notas" class="scheduler-border p-3">
+              <legend>Ingrese las notas de la materia seleccionada</legend>
+              <div class="form-group col">
+                <input
+                  type="number"
+                  name="notas"
+                  class="notas form-control"
+                  placeholder="Ingrese nota aquí..."
+                />
+                Nota 1
+              </div>
+              <div class="form-group col">
+                <input
+                  type="number"
+                  name="notas"
+                  class="notas form-control"
+                  placeholder="Ingrese nota aquí..."
+                />
+                Nota 2
+              </div>
+              <div class="form-group col">
+                <input
+                  type="number"
+                  name="nota"
+                  class="notas form-control"
+                  placeholder="Ingrese nota aquí..."
+                />
+                Nota 3
+              </div>
+              <div class="form-group col">
+                <input
+                  type="number"
+                  name="notas"
+                  class="notas form-control"
+                  placeholder="Ingrese nota aquí..."
+                />
+                Nota 4
+              </div>
+              <div class="form-group col">
+                <input
+                  type="number"
+                  name="notas"
+                  class="notas form-control"
+                  placeholder="Ingrese nota aquí..."
+                />
+                Nota 5
+              </div>
+            </fieldset>
+            <div class="btn-group d-flex justify-content-center my-3" role="group" aria-label="Basic example">
+              <button type="button" onclick="promedio()" class="btn btn-success btn-lg me-3">
+                Promedio
+              </button>
+              <button type="button" onclick="mayor()" class="btn btn-success btn-lg">
+                Nota más alta
+              </button>
+            </div>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb bg-light p-3 rounded-0">
+                <li class="breadcrumb-item active border-5" aria-current="page" id="resultado1">Promedio: <span id="promedio"></span></li>
+                <li class="breadcrumb-item active border-5" aria-current="page" id="resultado">Nota más alta: <span id="nota-mas-alta"></span></li>
+              </ol>
+            </nav>
+            
+            
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-light p-3 text-center">
+      <p>&copy; 2023 Ejercicio RSServer</p>
+    </footer>
+
+    <!-- Bootstrap JavaScript Libraries -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+  <script src="main.js"></script>
+</html>

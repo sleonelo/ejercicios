@@ -1,0 +1,69 @@
+<!-- Utilizando la teoría de formularios en PHP cree una página HTML que sirve
+para cargar datos personales de los alumnos de una Universidad, además,
+debería poder elegir de una lista las distintas materias que va a cursar ese año y
+el turno donde desea cursarla. Cuando se terminan de cargar los datos y luego de
+evaluar si los completó correctamente (para ello debe crear una función en
+javascript), se debe pasar todos esos datos a una página de servidor (PHP) a fin
+de que se reciban esos datos y los muestre por pantalla colocando las leyendas
+correspondientes. También debe mostrar la fecha y la hora de carga. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio nro 4</title>
+</head>
+
+<body>
+    <h1>Cargar datos personales</h1>
+<form onsubmit="return datos();" method="post" action="backend.php">
+    <label>
+        <h2>
+        <em>Ingrese su nombre: </em>
+        <input type="text" name="name" placeholder="nombre..." maxlength="35" id="name" />
+        </h2>    
+    </label>
+  
+    <label>
+        <h2>
+        <em>Ingrese su apellido:</em>
+        <input type="text" name="lastname" placeholder="apellido..." maxlength="35" id="lastname" />
+        </h2>    
+    </label>
+    
+    <label>
+        <h2>
+        <em>Ingrese su DNI: </em>
+        <input type="number" name="idnum" placeholder="DNI..." id="idnum" />
+        </h2>    
+    </label>
+    
+    <fieldset name="selmat">
+        <legend>Seleccione las materias a cursar</legend>
+        <input type="checkbox" name="materias[]" value="ingles" class="materias" /> Ingles<br />
+        <input type="checkbox" name="materias[]" value="matematica" class="materias"/>
+        Matematica<br />
+        <input type="checkbox" name="materias[]" value="programacion" class="materias"/>
+        Programacion<br />
+        <input type="checkbox" name="materias[]" value="sistemas" class="materias"/>
+        Sistemas<br />
+        <input type="checkbox" name="materias[]" value="otras" class="materias"/> Otras<br />
+    </fieldset>
+<br/>
+<br/>
+    <fieldset>
+        <legend>Seleccione el turno</legend>
+        <input type="radio" name="turnos[]" class="turno" value="maniana"/> Mañana<br/>
+        <input type="radio" name="turnos[]" class="turno" value="tarde"/> Tarde<br/>
+        <input type="radio" name="turnos[]" class="turno" value="noche"/> Noche<br/>
+    </fieldset>
+    <button type="submit">Enviar</button>
+</form>
+   <!-- <p id="listaDatos"></p> -->
+    <script src="testej4.js"> </script>
+</body>
+
+</html>

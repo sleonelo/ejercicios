@@ -1,0 +1,73 @@
+<!-- Usando formularios, cree una página html que contenga 2 cajas de texto, un
+combo el cual contendrá las operaciones matemáticas básicas y un botón. La
+idea es que el usuario cargue números, seleccione una operación y luego de
+ejecutar el botón esa info debería ser trasladada al servidor para que realice la
+operación entre los 2 números. -->
+
+<!-- Realice el mismo ejercicio del punto 3, pero combinando pagina de cliente y
+servidor. Aquí el cliente debe llamar una función del servidor que devuelva el
+resultado de la operación obtenida. Dicho resultado debe mostrarlo en el cliente
+en un objeto (label, textarea, etc, etc) – Realizarlo según la teoría de
+procedimientos remotos. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.7.0.js"
+    ></script>
+    <title>Ejercicio nro 3</title>
+  </head>
+  <body>
+    <form action="" method="POST">
+      <label for="input1">ingrese un numero</label>
+      <input type="text" name="input1" id="input1" />
+      <br />
+      <label for="input2">ingrese otro numero</label>
+      <input type="text" name="input2" id="input2" />
+      <br />
+      <select name="operaciones" id="operaciones">
+        <option value="suma">suma</option>
+        <option value="resta">resta</option>
+        <option value="multiplicacion">multiplicacion</option>
+        <option value="division">division</option>
+      </select>
+      <input type="submit" name="submit" value="enviar" id="enviar"/>
+    </form>
+
+    <p id="respuesta">el resultados seria: </p>
+
+    <script>
+      $("#enviar").click(function () {
+        let num1 = document.getElementById("input1").value;
+        let num2 = document.getElementById("input2").value;
+        let operaciones = document.getElementById("operaciones").value;
+        
+
+        let parametros = {
+          valor1: num1,
+          valor2: num2,
+          valor3: operaciones,
+        };
+       
+        $.ajax({
+          data: parametros,
+          url: "backend.php",
+          type: "POST",
+          beforeSend: function () {
+            $("#respuesta").html("Procesando, espere por favor...");
+          },
+          success: function (response) {
+            $("#respuesta").html(response);
+          },
+        });
+      });
+
+    
+    </script>
+  </body>
+</html>

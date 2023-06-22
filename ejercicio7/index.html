@@ -1,0 +1,66 @@
+<!-- Utilizando el modelo de procedimientos remotos cree una página en la que se le
+pida al cliente la carga de 5 nombres, luego pasarlos a una función de servidor y
+devuelva la lista de nombres ordenados. Los nombres los deberían mostrar en
+algún objeto html a elegir.- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.7.0.js"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Cargue 5 nombres</h1>
+    <form action="" method="post">
+      <label for="nombre1">
+        <h3>
+        <i>
+            Ingrese un nombre:
+        </i>
+            <input type="text" name="nombre1" id="nombre1" />
+        </h3>
+      </label>
+      <label for="nombre2">
+        <h3>
+        <i>
+            Ingrese un nombre:
+        </i>
+            <input type="text" name="nombre2" id="nombre2" />
+        </h3>
+      </label>
+      <label for="nombre3">
+        <h3>
+        <i>
+            Ingrese un nombre:
+        </i>
+            <input type="text" name="nombre3" id="nombre3" />
+        </h3>
+      </label>
+      <label for="nombre4">
+        <h3>
+        <i>
+            Ingrese un nombre:
+        </i>
+            <input type="text" name="nombre4" id="nombre4" />
+        </h3>
+      </label>
+      <label for="nombre5">
+        <h3>
+        <i>
+            Ingrese un nombre:
+        </i>
+            <input type="text" name="nombre5" id="nombre5" />
+        </h3>
+      </label>
+      <button type="button" id="enviar">Enviar</button>
+    </form>
+    <h3 id="respuesta"></h3>
+  </body>
+  <script src="main.js"></script>
+</html>

@@ -1,0 +1,74 @@
+<!-- Utilizando la teoría de llamada a procedimientos remotos, realice una página en
+la que el usuario carga un dni, nombre y apellido de un alumno, y las notas (5)
+para una materia en particular, luego de controlar si la información ha sido
+cargada, llamar a una función del servidor para obtener el promedio y la nota
+más alta cargada.- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.7.0.js"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    
+        <label>
+            <h2>
+            <em>Ingrese su nombre: </em>
+            <input type="text" name="nombre" placeholder="nombre..." maxlength="35" id="nombre" />
+            </h2>    
+        </label>
+        <label>
+            <h2>
+            <em>Ingrese su apellido:</em>
+            <input type="text" name="apellido" placeholder="apellido..." maxlength="35" id="apellido" />
+            </h2>    
+        </label>
+        <label>
+            <h2>
+            <em>Ingrese su DNI: </em>
+            <input type="number" name="dni" placeholder="DNI..." id="dni" />
+            </h2>    
+        </label>
+        <fieldset name="selmat">
+          <legend>Seleccione materia para ingresar las notas</legend>
+          <input type="radio" name="materias" value="ingles" class="materias" /> 
+          Ingles<br />
+          <input type="radio" name="materias" value="matematica" class="materias"/>
+          Matematica<br />
+          <input type="radio" name="materias" value="programacion" class="materias"/>
+          Programacion<br />
+          <input type="radio" name="materias" value="sistemas" class="materias"/>
+          Sistemas<br />
+          <input type="radio" name="materias" value="otras" class="materias"/> 
+          Otras<br />
+      </fieldset>
+      <fieldset name="notas">
+        <legend>Ingrese las notas de la materia seleccionada</legend>
+        <input type="number" name="notas" class="notas" placeholder="Ingrese nota aquí..."/> 
+        Nota 1<br />
+        <input type="number" name="notas" class="notas" placeholder="Ingrese nota aquí..."/>
+        Nota 2<br />
+        <input type="number" name="nota" class="notas" placeholder="Ingrese nota aquí..."/>
+        Nota 3<br />
+        <input type="number" name="notas" class="notas" placeholder="Ingrese nota aquí..."/>
+        Nota 4<br />
+        <input type="number" name="notas" class="notas" placeholder="Ingrese nota aquí..."/> 
+        Nota 5<br />
+    </fieldset>
+      <br/>
+      <br/>
+  <button type="button" onclick="enviar()" id="enviar">Enviar</button>
+
+<h2>
+  <span id="resultado">aca deberia salir: </span>
+</h2>
+</body>
+  <script src="main.js"></script>
+</html>
